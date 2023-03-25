@@ -23,6 +23,12 @@ public class EmployeeController {
     public Employee createEmployee(@RequestBody Employee employee){
         return employeeService.saveEmployee(employee);
     }
+    
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Employee createEmployeeByNo(@RequestBody Employee employee){
+        return employeeService.saveEmployee(employee);
+    }
 
     @GetMapping
     public List<Employee> getAllEmployees(){
